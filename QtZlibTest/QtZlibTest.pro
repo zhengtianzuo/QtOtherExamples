@@ -12,4 +12,11 @@ CONFIG -= app_bundle
 SOURCES += main.cpp
 
 INCLUDEPATH += $$PWD/zlib
+
+win32{
 LIBS += -L$$PWD/zlib -lzlib
+}
+
+unix{
+LIBS += -L$$PWD/zlib -lz
+}

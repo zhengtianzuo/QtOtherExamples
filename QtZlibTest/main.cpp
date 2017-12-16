@@ -7,6 +7,7 @@
 */
 #include <QCoreApplication>
 #include <QFile>
+#include <QDebug>
 #include <zlib.h>
 
 int main(int argc, char *argv[])
@@ -18,7 +19,8 @@ int main(int argc, char *argv[])
     QByteArray bytes = file.readAll();
     file.close();
     uLong nDataSize = bytes.size();
-    unsigned char *cData = reinterpret_cast<unsigned char*>(bytes.data());
+    unsigned char *cData = new unsigned char[nDataSize];
+    memcpy(cData, bytes.data(), nDataSize);
     uLong nCompSize = compressBound(nDataSize);
     unsigned char *cComp = new unsigned char[nCompSize];
 
@@ -31,7 +33,7 @@ int main(int argc, char *argv[])
 
     //解压
     memset(cData, 0, nDataSize);
-    nDataSize = 0;
+    nDataSize++;
     if (uncompress(cData, &nDataSize, cComp, nCompSize) != Z_OK)
     {
         printf("uncompress failed!\n");
@@ -45,5 +47,7 @@ int main(int argc, char *argv[])
     fileOut.write(reinterpret_cast<char*>(cData), nDataSize);
     fileOut.close();
 
-    return a.exec();
+    delete[] cData;
+
+    return(0);
 }
