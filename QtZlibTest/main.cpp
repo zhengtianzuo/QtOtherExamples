@@ -10,6 +10,28 @@
 #include <QDebug>
 #include <zlib.h>
 
+int zlibCompress(char *dest,   int &destLen,
+                 char *source, int sourceLen)
+{
+    unsigned char* dest1 = reinterpret_cast<unsigned char*>(dest);
+    unsigned long destLen1 = static_cast<unsigned long>(destLen);
+    unsigned char* source1 = reinterpret_cast<unsigned char*>(source);
+    unsigned long sourceLen1 = static_cast<unsigned long>(sourceLen);
+
+    return(compress(dest1, &destLen1, source1, sourceLen1));
+}
+
+int zlibUncompress(char *dest,   int &destLen,
+                   char *source, int sourceLen)
+{
+    unsigned char* dest1 = reinterpret_cast<unsigned char*>(dest);
+    unsigned long destLen1 = static_cast<unsigned long>(destLen);
+    unsigned char* source1 = reinterpret_cast<unsigned char*>(source);
+    unsigned long sourceLen1 = static_cast<unsigned long>(sourceLen);
+
+    return(uncompress(dest1, &destLen1, source1, sourceLen1));
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -18,14 +40,14 @@ int main(int argc, char *argv[])
     file.open(QIODevice::ReadOnly);
     QByteArray bytes = file.readAll();
     file.close();
-    uLong nDataSize = bytes.size();
-    unsigned char *cData = new unsigned char[nDataSize];
+    int nDataSize = bytes.size();
+    char *cData = new char[nDataSize];
     memcpy(cData, bytes.data(), nDataSize);
-    uLong nCompSize = compressBound(nDataSize);
-    unsigned char *cComp = new unsigned char[nCompSize];
+    int nCompSize = compressBound(nDataSize);
+    char *cComp = new char[nCompSize];
 
     //压缩
-    if (compress(cComp, &nCompSize, cData, nDataSize) != Z_OK)
+    if (zlibCompress(cComp, nCompSize, cData, nDataSize) != Z_OK)
     {
         printf("compress failed!\n");
         return -1;
@@ -33,7 +55,7 @@ int main(int argc, char *argv[])
 
     //解压
     memset(cData, 0, nDataSize);
-    if (uncompress(cData, &nDataSize, cComp, nCompSize) != Z_OK)
+    if (zlibUncompress(cData, nDataSize, cComp, nCompSize) != Z_OK)
     {
         printf("uncompress failed!\n");
         return -1;
