@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 
     //解压
     memset(cData, 0, nDataSize);
-    nDataSize++;
     if (uncompress(cData, &nDataSize, cComp, nCompSize) != Z_OK)
     {
         printf("uncompress failed!\n");
