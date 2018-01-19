@@ -16,8 +16,6 @@ Qt相关的技术分享
 
 QtZlibTest: Qt调用ZLib压缩解压
 
-![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtZlibTest/show.gif?raw=true)
-
 QtCamera: Qt操作摄像头
 
 
