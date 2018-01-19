@@ -23,22 +23,22 @@ QtCamera: Qt操作摄像头
 
 QtAudioDevices: Qt获取音频设备信息
 
-![](https://github.com/zhengtianzuo/QtWidgetsExamples/blob/master/QtAudioDevices/show.png?raw=true)
+![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtAudioDevices/show.png?raw=true)
 
 
 QtLocalIP: Qt获取本地IP
 
-![](https://github.com/zhengtianzuo/QtWidgetsExamples/blob/master/QtLocalIP/show.png?raw=true)
+![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtLocalIP/show.png?raw=true)
 
 
 QtLog4Qt: Qt使用Log4Qt写日志
 
-![](https://github.com/zhengtianzuo/QtWidgetsExamples/blob/master/QtLog4Qt/show.png?raw=true)
+![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtLog4Qt/show.png?raw=true)
 
 
 QtPlugin: Qt调用插件
 
-![](https://github.com/zhengtianzuo/QtWidgetsExamples/blob/master/QtPlugin/QtMyPluginTest/show.gif?raw=true)
+![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtPlugin/QtMyPluginTest/show.gif?raw=true)
 
 
 ***
