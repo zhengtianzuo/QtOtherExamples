@@ -6,4 +6,9 @@
 
 TEMPLATE = subdirs
 SUBDIRS += QtZlibTest
-
+SUBDIRS += QtAudioDevices
+SUBDIRS += QtCamera
+SUBDIRS += QtLocalIP
+SUBDIRS += QtLog4Qt
+SUBDIRS += QtPlugin\QtMyPlugin
+SUBDIRS += QtPlugin\QtMyPluginTest
