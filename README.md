@@ -34,6 +34,9 @@ QtPlugin: Qt调用插件
 
 ![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtPlugin/QtMyPluginTest/show.gif?raw=true)
 
+QtSingleApplication: Qt单实例进程
+
+
 
 #### 联系方式:
 ***
