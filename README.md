@@ -36,6 +36,12 @@ QtPlugin: Qt调用插件
 
 QtSingleApplication: Qt单实例进程
 
+QtAutoStart: Qt设置开机启动
+
+![](https://github.com/zhengtianzuo/QtOtherExamples/blob/master/QtAutoStart/show.png?raw=true)
+
+
+
 
 
 #### 联系方式:

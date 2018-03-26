@@ -13,3 +13,4 @@ SUBDIRS += QtLog4Qt
 SUBDIRS += QtPlugin\QtMyPlugin
 SUBDIRS += QtPlugin\QtMyPluginTest
 SUBDIRS += QtSingleApplication
+SUBDIRS += QtAutoStart
